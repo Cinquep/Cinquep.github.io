@@ -304,8 +304,8 @@
             <input type="reset">
             </center>
         </td>
-    <tr>
     </tr>
+
 
    </table>
 </form> 
