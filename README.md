@@ -136,6 +136,7 @@
             >
             <span id="addr2_text"></span>
         </td>
+    </tr>
     <tr class="form">
         <td align="right">
             <label for="city">City,</label>
@@ -289,7 +290,6 @@
         </td>
     </tr>
         
-    </tr>
 
 
 
