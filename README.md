@@ -14,8 +14,8 @@
                     <td>
                         <img 
                             id="logo" 
-                            src="SOMETHING.jpg" 
-                            alt="Fenrir Medical Logo"
+                            src="SOMETHING.png" 
+                            alt="Preston Medical Logo"
                             width="200"
                             height="200"
                         >
@@ -27,6 +27,7 @@
         </div>
         <hr>
         <div id="body">
+    <form>
    <table class="form">
     <tr class="form">
         <th class="form" colspan="3">Register for an appointment</th>
@@ -66,7 +67,8 @@
                     placeholder="Public (required)"
             >
 
-        <span id="name_text"></td>
+        <span id="name_text"></span>
+        </td>
     </tr>
     <tr  class="form">
         <td align="right">
@@ -81,7 +83,8 @@
                     oninput="this.setCustomValidity('')"
                     placeholder="Public (required)"
         >
-    <span id="dob_date"></td>
+    <span id="dob_date"></span>
+    </td>
     </tr>
         <tr  class="form">
         <td align="right">
@@ -98,7 +101,7 @@
                     oninput="this.setCustomValidity('')"
                     placeholder="SSN (required)"
             >
-        <span id="ssn_text"></td>
+        <span id="ssn_text"></span></td>
     </tr>
     <tr  class="form">
         <td align="right">
@@ -116,7 +119,8 @@
                     oninput="this.setCustomValidity('')"
                     placeholder="5555 Super St (required)"
             >
-        <span id="addr1_text"></td>
+        <span id="addr1_text"></span>
+        </td>
     </tr>
     <tr  class="form">
         <td align="right">
@@ -126,11 +130,11 @@
             <input type="text" 
                     size="20" 
                     maxlength="30" 
-                    id="addr1" 
-                    name="addr1" 
+                    id="addr2" 
+                    name="addr2" 
                     placeholder="Apt #, other (optional)"
             >
-            <span id="addr2_text">
+            <span id="addr2_text"></span>
         </td>
     <tr class="form">
         <td align="right">
@@ -208,13 +212,13 @@
                     size="5"
                     maxlength="5" 
                     id="zip" 
-                    name="zip" how t
+                    name="zip"
                     required
                     oninvalid="this.setCustomValidity('5 Digit Zip/Postal Code required')"
                     oninput="this.setCustomValidity('')"
                     placeholder="00000"
             >
-            <span id="City_text"><span id="State_text"> 
+            <span id="City_text"></span><span id="State_text"></span>
         </td>
     </tr>
     <tr class="form">
@@ -229,8 +233,9 @@
                     name="phone" 
                     placeholder="(281)415-4322"
             >
-            <span id="phone_text">  
+            <span id="phone_text"></span>
         </td>
+    </tr>
     <tr  class="form">
         <td align="right">
             <label for="email">Email</label>
@@ -242,8 +247,9 @@
                     name="email1" 
                     placeholder="HaroldM21@cougarnet.uh.edu"
             >
-            <span id="Email_Text">
+            <span id="Email_Text"></span>
         </td>
+    </tr>
     <tr  class="form">
         <td align="right">
             <label for="MedicalHist">Medical History</label>
@@ -279,10 +285,11 @@
                     value="Other"
             >
                     <label for="illnessOther">Other(Specify below)</label><br>
-            <span id="Medical_Check">
+            <span id="Medical_Check"></span>
         </td>
+    </tr>
         
-    </tr class="form">
+    </tr>
 
 
 
@@ -292,7 +299,7 @@
     <tr>        
         <td colspan="3">
             <center>
-            <input type="submit" onclick="window.location.href='homework1-submit.html'"">
+            <input type="submit" onclick="window.location.href='homework1-submit.html'">
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <input type="reset">
             </center>
@@ -300,10 +307,10 @@
     <tr>
     </tr>
 
-   </table
+   </table>
 </form> 
         </div>
-        <div id="footer"
+        <div id="footer">
             <hr>
             <center>
             Preston Medical
