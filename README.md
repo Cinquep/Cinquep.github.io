@@ -2,7 +2,7 @@
     <head>
         <meta charset="utf-8">
 
-        <title>Jake's Homework 1</title>
+        <title>Homework 1</title>
 
         <!-- Load external CSS styles -->
         <link rel="stylesheet" href="homework1.css">
@@ -14,21 +14,22 @@
                     <td>
                         <img 
                             id="logo" 
-                            src="lcrvlogo.png" 
-                            alt="Lake Conroe Park & RV Center"
+                            src="SOMETHING.jpg" 
+                            alt="Fenrir Medical Logo"
+                            width="200"
+                            height="200"
                         >
                     </td>
-                    <td valign="top">Lake Conroe RV Resort</td>
+                    <td valign="middle" align="center" style="font-weight:bold; font-size:39px;">Preston Medical Center</td>
                     <td valign="bottom" align="right">Today's date: <span id="today">Date goes here </span></td>
                 </tr>
             </table>
         </div>
         <hr>
         <div id="body">
-<form action="homework1-thanks.html">
    <table class="form">
     <tr class="form">
-        <th class="form" colspan="3">Set up a new account</th>
+        <th class="form" colspan="3">Register for an appointment</th>
     </tr>
     <tr class="form">
         <td align="right">
@@ -62,9 +63,42 @@
                     required
                     oninvalid="this.setCustomValidity('Last Name is Required')"
                     oninput="this.setCustomValidity('')"
-                    placeholder="Public (req'd)"
+                    placeholder="Public (required)"
             >
-        <span id="name_text"><</td>
+
+        <span id="name_text"></td>
+    </tr>
+    <tr  class="form">
+        <td align="right">
+            <label for="DOB" >Date of Birth</label>
+        </td>
+        <td>
+                 <input type="date"
+                    id="DOB" 
+                    name="DateOfBirth" 
+                    required
+                    oninvalid="this.setCustomValidity('Date of Birth is Required')"
+                    oninput="this.setCustomValidity('')"
+                    placeholder="Public (required)"
+        >
+    <span id="dob_date"></td>
+    </tr>
+        <tr  class="form">
+        <td align="right">
+            <label for="SSN" >Social Security</label>
+        </td>
+        <td>
+            <input type="password"
+                    size="9"
+                    maxlength="11"
+                    id="SSN" 
+                    name="SocialSecurity" 
+                    required
+                    oninvalid="this.setCustomValidity('Social Security # is Required')"
+                    oninput="this.setCustomValidity('')"
+                    placeholder="SSN (required)"
+            >
+        <span id="ssn_text"></td>
     </tr>
     <tr  class="form">
         <td align="right">
@@ -80,13 +114,13 @@
                     required
                     oninvalid="this.setCustomValidity('At least 1 address line Required')"
                     oninput="this.setCustomValidity('')"
-                    placeholder="1234 Main St (req'd)"
+                    placeholder="5555 Super St (required)"
             >
         <span id="addr1_text"></td>
     </tr>
     <tr  class="form">
         <td align="right">
-            <label for="addr2">Address Line 2</label>
+            <label for="addr2">Address line 2</label>
         </td>
         <td>
             <input type="text" 
@@ -94,7 +128,7 @@
                     maxlength="30" 
                     id="addr1" 
                     name="addr1" 
-                    placeholder="Apt #, etc..."
+                    placeholder="Apt #, other (optional)"
             >
             <span id="addr2_text">
         </td>
@@ -106,14 +140,14 @@
         </td>
         <td>
             <input type="text" 
-                    size="10" 
+                    size="12" 
                     maxlength="25" 
                     id="city" 
                     name="city" 
                     required
                     oninvalid="this.setCustomValidity('You forgot City')"
                     oninput="this.setCustomValidity('')"
-                    placeholder="Anytown (req'd)"
+                    placeholder="Anytown (required)"
             >
             <select required>
                 <option value=""></option>
@@ -174,7 +208,7 @@
                     size="5"
                     maxlength="5" 
                     id="zip" 
-                    name="zip" 
+                    name="zip" how t
                     required
                     oninvalid="this.setCustomValidity('5 Digit Zip/Postal Code required')"
                     oninput="this.setCustomValidity('')"
@@ -193,10 +227,61 @@
                     maxlength="13" 
                     id="phone" 
                     name="phone" 
-                    placeholder="(713)555-1212"
+                    placeholder="(281)415-4322"
             >
             <span id="phone_text">  
         </td>
+    <tr  class="form">
+        <td align="right">
+            <label for="email">Email</label>
+        </td>
+        <td>
+            <input type="email" 
+                    size="25"
+                    id="email1" 
+                    name="email1" 
+                    placeholder="HaroldM21@cougarnet.uh.edu"
+            >
+            <span id="Email_Text">
+        </td>
+    <tr  class="form">
+        <td align="right">
+            <label for="MedicalHist">Medical History</label>
+        </td>
+        <td>
+            <input type="checkbox" 
+                    id="illness1" 
+                    name="illness1" 
+                    value="Heart Disease"
+            >
+                    <label for="illness1">Heart Disease</label><br>          
+            <input type="checkbox" 
+                    id="illness2" 
+                    name="illness2" 
+                    value="Diabetes"
+            >
+                    <label for="illness2">Diabetes</label><br>
+            <input type="checkbox" 
+                    id="illness3" 
+                    name="illness3" 
+                    value="Heart Disease"
+            >
+                    <label for="illness3">Hypertension</label><br>            
+            <input type="checkbox" 
+                    id="illness4" 
+                    name="illness4" 
+                    value="Diabetes"
+            >
+                    <label for="illness4">Cancer</label><br>
+            <input type="checkbox" 
+                    id="illnessOther" 
+                    name="illnessOther" 
+                    value="Other"
+            >
+                    <label for="illnessOther">Other(Specify below)</label><br>
+            <span id="Medical_Check">
+        </td>
+        
     </tr class="form">
 
 
@@ -207,7 +292,7 @@
     <tr>        
         <td colspan="3">
             <center>
-            <input type="submit">
+            <input type="submit" onclick="window.location.href='homework1-submit.html'"">
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <input type="reset">
             </center>
@@ -220,10 +305,16 @@
         </div>
         <div id="footer"
             <hr>
-            Here is a footer... BYE!
+            <center>
+            Preston Medical
+            <a href="https://abc.com" class="contact-btn">CONTACT US</a>
+            <br>
+            PO BOX 65721
+            <br>
+            Missouri City TX 77459
+            </center>
         </div>
-        <!-- Load external JavaScript -->
-        <script src="homework1.js"></script>
+        
         
  <script>
     document.getElementById("today").innerHTML = new Date().toLocaleDateString();
