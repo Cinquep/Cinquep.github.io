@@ -12,9 +12,6 @@ body
     padding: 0;
     background-color: #d0e8f5;
     font-family: Georgia, serif;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
 }
 
 #header 
