@@ -21,8 +21,9 @@ table.form, tr.form, td.form
   border-spacing: 12px;
   color:rgb(0, 0, 0);
 }
-#header {
-    background-color: white;
+#header 
+{
+    background-color: rgb(162, 255, 144);
     border: 1px solid #ffffff;
     margin: 20px;
     padding: 10px;
