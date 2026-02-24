@@ -5,16 +5,28 @@
  Date Updated: 2026-02-26
  Purpose: Style sheet for MIS 3371 HW1
  */
- body {
+ body 
+{
     background-color: rgb(202, 230, 255);
-    font-family: "Source Sans Pro", sans-serif;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
-table.form, tr.form, td.form {
-  width: 100%;
-  opacity: 0.9;
-  font-family: Arial, Helvetica, sans-serif;
+table.form, tr.form, td.form 
+{
+  margin: 0 auto;
+  width: 500px;
+  opacity: 1;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
   background-color:rgb(255, 255, 255);
   padding: 0px;
   border-spacing: 12px;
   color:rgb(0, 0, 0);
 }
+#header {
+    background-color: white;
+    border: 1px solid #ffffff;
+    margin: 20px;
+    padding: 10px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+
