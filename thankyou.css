@@ -19,6 +19,7 @@ body
 
 #header 
 {
+    text-align: center;
     background-color: white;
     border: 1px solid #ccc;
     margin: 20px;
@@ -28,6 +29,7 @@ body
 
 .site-title 
 {
+    text-align: center;
     font-weight: bold;
     font-size: 39px;
     text-align: center;
@@ -42,6 +44,7 @@ body
 
 #footer
 {
+    text-align: center;
     background-color: white;
     border: 1px solid #ccc;
     margin: 20px;
