@@ -13,6 +13,7 @@
 
         <link rel="stylesheet" href="homework1.css">
     </head>
+ 
     <body>
         <div id="header"> 
             <table width="100%">
@@ -27,11 +28,14 @@
                         >
                     </td>
                     <td valign="middle" align="center" style="font-weight:bold; font-size:39px;">Preston Medical Center</td>
-                    <td valign="bottom" align="right">Today's date: <span id="today">Date goes here </span></td>
+                    <td valign="bottom" align="right">Today's date: <span id="today"></span></td>
                 </tr>
             </table>
         </div>
         <hr>
+     <!-- 
+     Beginning of Form
+     -->
     <div id="body">
     <form action="homework1-submit.html">
     <table class="form">
@@ -429,9 +433,10 @@
         </span>
         <span id="urgencyValue" style="margin-left: -210px;"></span>
     </td>
-</tr>
-
-
+    </tr>
+         <!-- 
+         End of Form Inputs
+         -->
     <tr>        
         <td colspan="3">
             <center>
@@ -455,7 +460,9 @@
             Missouri City TX 77459
             </center>
         </div>
-        
+        <!-- 
+         End of Website
+         -->
         
  <script>
     document.getElementById("today").innerHTML = new Date().toLocaleDateString();
