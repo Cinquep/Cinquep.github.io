@@ -463,7 +463,25 @@
         <!-- 
          End of Website
          -->
-        
+        <tr>        
+        <td colspan="3">
+            <center>
+            <input type="button" id="getdata" value="Get Data V1" onclick='getdata1()'>
+            <input type="button" id="check" value="Check your input" onclick="checkform()">
+            <input type="submit" value="Send the Form" id="submit" disabled>
+            <input type="reset" value="Clear and Start over"">
+            </center>
+        </td>
+    <tr>
+    </tr>
+</table>
+</form> 
+        </div>
+<!-- Show entered form data -->
+<p id="outputformdata"></p>
+
+<!-- Load external JavaScript -->
+<script src="homework2.js"></script>
  <script>
     document.getElementById("today").innerHTML = new Date().toLocaleDateString();
 </script>
