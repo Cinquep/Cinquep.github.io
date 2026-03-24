@@ -306,53 +306,71 @@ function passwordentry() {
     document.getElementById("pass_text").innerHTML = "Password must be 8-30 characters.";
     error_flag = "1";
   } else {
-    // Lowercase
-    if (pass.search(/[a-z]/) < 0) {
-      document.getElementById("pass_text").innerHTML = "Need at least 1 lowercase letter.";
-      error_flag = "1";
-    } else {
-      // Uppercase
-      if (pass.search(/[A-Z]/) < 0) {
-        document.getElementById("pass_text").innerHTML = "Need at least 1 uppercase letter.";
-        error_flag = "1";
-      } else {
-        // Number
-        if (pass.search(/[0-9]/) < 0) {
-          document.getElementById("pass_text").innerHTML = "Need at least 1 number.";
-          error_flag = "1";
-        } else {
-          // Special character
-          if (pass.search(/[!@#%^&*()\-_+=\\\/><.,`~]/) < 0) {
-            document.getElementById("pass_text").innerHTML = "Need at least 1 special character: !@#%^&*()-_+=\\/><.,`~";
-            error_flag = "1";
-          } else {
-            // No double-quotes
-            if (pass.indexOf('"') >= 0) {
-              document.getElementById("pass_text").innerHTML = "Password cannot contain double-quote (\") characters.";
-              error_flag = "1";
-            } else {
-              // Cannot contain username/firstname/lastname
-              if (username.length >= 3 && pass.toLowerCase().indexOf(username) >= 0) {
-                document.getElementById("pass_text").innerHTML = "Password cannot contain your username.";
-                error_flag = "1";
-              } else {
-                if (firstname.length >= 3 && pass.toLowerCase().indexOf(firstname) >= 0) {
-                  document.getElementById("pass_text").innerHTML = "Password cannot contain your first name.";
-                  error_flag = "1";
-                } else {
-                  if (lastname.length >= 3 && pass.toLowerCase().indexOf(lastname) >= 0) {
-                    document.getElementById("pass_text").innerHTML = "Password cannot contain your last name.";
-                    error_flag = "1";
-                  } else {
-                    document.getElementById("pass_text").innerHTML = "";
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    }
+    document.getElementById("pass_text").innerHTML = "";
+  }
+
+  // Lowercase
+  if (pass.search(/[a-z]/) < 0) {
+    document.getElementById("pass_text2").innerHTML = "Need at least 1 lowercase letter.";
+    error_flag = "1";
+  } else {
+    document.getElementById("pass_text2").innerHTML = "";
+  }
+
+  // Uppercase
+  if (pass.search(/[A-Z]/) < 0) {
+    document.getElementById("pass_text3").innerHTML = "Need at least 1 uppercase letter.";
+    error_flag = "1";
+  } else {
+    document.getElementById("pass_text3").innerHTML = "";
+  }
+
+  // Number
+  if (pass.search(/[0-9]/) < 0) {
+    document.getElementById("pass_text4").innerHTML = "Need at least 1 number.";
+    error_flag = "1";
+  } else {
+    document.getElementById("pass_text4").innerHTML = "";
+  }
+
+  // Special character
+  if (pass.search(/[!@#%^&*()\-_+=\\\/><.,`~]/) < 0) {
+    document.getElementById("pass_text5").innerHTML = "Need at least 1 special character: !@#%^&*()-_+=\\/><.,`~";
+    error_flag = "1";
+  } else {
+    document.getElementById("pass_text5").innerHTML = "";
+  }
+
+  // No double-quotes
+  if (pass.indexOf('"') >= 0) {
+    document.getElementById("pass_text6").innerHTML = "Password cannot contain double-quote (\") characters.";
+    error_flag = "1";
+  } else {
+    document.getElementById("pass_text6").innerHTML = "";
+  }
+
+  // Cannot contain username
+  if (username.length >= 3 && pass.toLowerCase().indexOf(username) >= 0) {
+    document.getElementById("pass_text7").innerHTML = "Password cannot contain your username.";
+    error_flag = "1";
+  } else {
+    document.getElementById("pass_text7").innerHTML = "";
+  }
+
+  // Cannot contain first name
+  if (firstname.length >= 3 && pass.toLowerCase().indexOf(firstname) >= 0) {
+    document.getElementById("pass_text8").innerHTML = "Password cannot contain your first name.";
+    error_flag = "1";
+  } else {
+    document.getElementById("pass_text8").innerHTML = "";
+  }
+
+  // Cannot contain last name
+  if (lastname.length >= 3 && pass.toLowerCase().indexOf(lastname) >= 0) {
+    document.getElementById("pass_text9").innerHTML = "Password cannot contain your last name.";
+    error_flag = "1";
+  } else {
+    document.getElementById("pass_text9").innerHTML = "";
   }
 }
 
