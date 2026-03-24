@@ -64,3 +64,18 @@ table.output td:nth-child(3) {
     background-color: #fff;
 }
 
+#pass_text,
+#pass_text2,
+#pass_text3,
+#pass_text4,
+#pass_text5,
+#pass_text6,
+#pass_text7,
+#pass_text8,
+#pass_text9,
+#confirmPass_text 
+{
+    display: block;
+    min-height: 1.2em;
+    color: red;
+}
