@@ -21,7 +21,7 @@ function setup()
   }
 function getdata1() 
 {
-  var formcontents = document.getElementById("signup");
+  var formcontents = document.getElementById("register");
   var formoutput;
   var datatype;
   var i;
