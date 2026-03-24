@@ -69,7 +69,7 @@ function checkfirstname() {
     document.getElementById("name_message").innerHTML = "First name must be 1-30 characters.";
     error_flag = "1";
   } else {
-    if (x.match(/^[a-zA-Z'-]+$/)) {
+    if (document.getElementById("firstname").value.match(/^[a-zA-Z'-]+$/)) {
       document.getElementById("name_message").innerHTML = "";
     } else {
       document.getElementById("name_message").innerHTML = "First name: letters, apostrophes, and dashes only.";
@@ -87,7 +87,7 @@ function checkmiddle() {
   if (x.length === 0) {
     document.getElementById("name_message").innerHTML = "";
   } else {
-    if (x.match(/^[a-zA-Z]$/)) {
+    if (document.getElementById("middleinit").value.match(/^[a-zA-Z]$/)) {
       document.getElementById("name_message").innerHTML = "";
     } else {
       document.getElementById("name_message").innerHTML = "Middle initial: one letter only, no numbers or symbols.";
@@ -106,7 +106,7 @@ function checklastname() {
     document.getElementById("lastname_message").innerHTML = "Last name must be 1-30 characters.";
     error_flag = "1";
   } else {
-    if (x.match(/^[a-zA-Z2-5'-]+$/)) {
+    if (document.getElementById("lastname").value.match(/^[a-zA-Z2-5'-]+$/)) {
       document.getElementById("lastname_message").innerHTML = "";
     } else {
       document.getElementById("lastname_message").innerHTML = "Last name: letters, apostrophes, dashes, and numbers 2-5 only.";
@@ -154,7 +154,7 @@ function checkemail() {
   if (x.length === 0) {
     document.getElementById("Email_Text").innerHTML = "";
   } else {
-    if (x.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
+    if (document.getElementById("email1").value.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
       document.getElementById("Email_Text").innerHTML = "";
     } else {
       document.getElementById("Email_Text").innerHTML = "Enter a valid email: name@domain.tld";
@@ -172,7 +172,7 @@ function checkphone() {
   if (x.length === 0) {
     document.getElementById("phone_text").innerHTML = "";
   } else {
-    if (x.match(/^\d{3}-\d{3}-\d{4}$/)) {
+    if (document.getElementById("phone").value.match(/^\d{3}-\d{3}-\d{4}$/)) {
       document.getElementById("phone_text").innerHTML = "";
     } else {
       document.getElementById("phone_text").innerHTML = "Phone must be in format 000-000-0000.";
@@ -248,8 +248,8 @@ function checkstate() {
 */
 function checkzip() {
   x = document.getElementById("zip").value;
-  if (x.match(/^\d{5}(-\d{4})?$/)) {
-    document.getElementById("zip").value = x.substring(0, 5);
+  if (document.getElementById("zip").value.match(/^\d{5}(-\d{4})?$/)) {
+    document.getElementById("zip").value = document.getElementById("zip").value.substring(0, 5);
     document.getElementById("zip_text").innerHTML = "";
   } else {
     document.getElementById("zip_text").innerHTML = "Zip must be 5 digits (or zip+4: 00000-0000).";
@@ -269,16 +269,16 @@ function checkuser() {
     document.getElementById("user_text").innerHTML = "Username must be 5-30 characters.";
     error_flag = "1";
   } else {
-    if (x.match(/\s/)) {
+    if (document.getElementById("user").value.match(/\s/)) {
       document.getElementById("user_text").innerHTML = "Username cannot contain spaces.";
       error_flag = "1";
     } else {
-      if (x.match(/^\d/)) {
+      if (document.getElementById("user").value.match(/^\d/)) {
         document.getElementById("user_text").innerHTML = "Username cannot start with a number.";
         error_flag = "1";
       } else {
-        if (x.match(/^[a-zA-Z][a-zA-Z0-9_-]*$/)) {
-          document.getElementById("user").value = x.toLowerCase();
+        if (document.getElementById("user").value.match(/^[a-zA-Z][a-zA-Z0-9_-]*$/)) {
+          document.getElementById("user").value = document.getElementById("user").value.toLowerCase();
           document.getElementById("user_text").innerHTML = "";
         } else {
           document.getElementById("user_text").innerHTML = "Username: letters, numbers, underscores, and dashes only.";
