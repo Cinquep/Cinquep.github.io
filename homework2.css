@@ -64,7 +64,3 @@ table.output td:nth-child(3) {
     background-color: #fff;
 }
 
-/* Hover highlight */
-table.output tr:hover td {
-    background-color: rgb(195, 255, 180);
-}
