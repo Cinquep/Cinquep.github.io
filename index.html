@@ -1,17 +1,17 @@
+
 <!-- 
  Name: Cinque Preston
- File: homework1.css
+ File: homework1.html
  Date Created: 2026-02-15
- Date Updated: 2026-02-23
+ Date Updated: 2026-03-24
  Purpose: Style sheet for MIS 3371 HW1
 -->
 <html>
     <head>
         <meta charset="utf-8">
-
         <title>Homework 1</title>
-
         <link rel="stylesheet" href="homework1.css">
+        <link rel="stylesheet" href="homework2.css">
     </head>
  
     <body>
@@ -33,9 +33,7 @@
             </table>
         </div>
         <hr>
-     <!-- 
-     Beginning of Form
-     -->
+
     <div id="body">
     <form name="register" id="register" onreset="removedata1()" action="homework1-submit.html">
     <table class="form">
@@ -51,10 +49,10 @@
                    size="25" 
                    maxlength="30" 
                    id="firstname" 
-                   name="firsttname" 
+                   name="firstname" 
                    required 
                    oninput="this.setCustomValidity('')" 
-                   placeholder="Jane(required)">
+                   placeholder="Jane (required)">
         </span>
         <span style="display:inline-block; text-align:left;">
             <label for="middleinit">MI</label><br>
@@ -77,7 +75,8 @@
                    oninput="this.setCustomValidity('')" 
                    placeholder="Public (required)">
         </span>
-        <span id="name_text"></span>
+        <span id="name_message" style="color:red;"></span>
+        <span id="lastname_message" style="color:red;"></span>
     </td>
     </tr>
     <tr class="form">
@@ -92,6 +91,7 @@
                    oninvalid="this.setCustomValidity('Date of Birth is Required')"
                    oninput="this.setCustomValidity('')">
         </span>
+        <span id="dob_message" style="color:red;"></span>
         <span id="dob_date"></span>
         <span style="display:inline-block; text-align:left;">
             <label for="SSN">SSN</label><br>
@@ -105,7 +105,7 @@
                    oninput="this.setCustomValidity('')"
                    placeholder="SSN (required)">
         </span>
-        <span id="ssn_text"></span>
+        <span id="ssn_text" style="color:red;"></span>
     </td>
     </tr>
     <tr class="form">
@@ -124,7 +124,7 @@
                    oninput="this.setCustomValidity('')"
                    placeholder="5555 Super St (required)">
         </span>
-        <span id="addr1_text"></span>
+        <span id="addr1_text" style="color:red;"></span>
 
         <span style="display:inline-block; text-align:left;">
             <label for="addr2">Address Line 2</label><br>
@@ -135,7 +135,7 @@
                    name="addr2"
                    placeholder="Apt #, other (optional)">
         </span>
-        <span id="addr2_text"></span>
+        <span id="addr2_text" style="color:red;"></span>
     </td>
     </tr>
     <tr class="form">
@@ -155,7 +155,7 @@
         </span>
         <span style="display:inline-block; text-align:left;">
             <label for="state">State</label><br>
-            <select id="state" required>
+            <select id="state" name="state" required>
                 <option value=""></option>
                 <option value="AL">Alabama</option>
                 <option value="AK">Alaska</option>
@@ -223,7 +223,7 @@
                    oninput="this.setCustomValidity('')"
                    placeholder="00000">
         </span>
-        <span id="City_text"></span><span id="State_text"></span>
+        <span id="City_text" style="color:red;"></span><span id="State_text" style="color:red;"></span><span id="zip_text" style="color:red;"></span>
     </td>
     </tr>
     <tr class="form">
@@ -238,7 +238,7 @@
                    name="phone"
                    placeholder="(281)415-4322">
         </span>
-        <span id="phone_text"></span>
+        <span id="phone_text" style="color:red;"></span>
     </td>
     </tr>
     <tr class="form">
@@ -252,7 +252,7 @@
                    name="email1"
                    placeholder="HaroldM21@cougarnet.uh.edu">
         </span>
-        <span id="Email_Text"></span>
+        <span id="Email_Text" style="color:red;"></span>
     </td>
     </tr>
     <tr class="form">
@@ -271,7 +271,7 @@
                    oninput="this.setCustomValidity('')"
             >
         </span>
-        <span id="user_text"></span>
+        <span id="user_text" style="color:red;"></span>
     </td>
     </tr>
     <tr class="form">
@@ -290,7 +290,7 @@
                    oninput="this.setCustomValidity('')"
             >
         </span>
-        <span id="pass_text"></span>
+        <span id="pass_text" style="color:red;"></span>
         <span style="display:inline-block; text-align:left;">
             <label for="confirmPass">Confirm your password</label><br>
             <input type="password" 
@@ -302,7 +302,7 @@
                    placeholder="Retype Password"
             >
         </span>
-        <span id="confirmPass_text"></span>
+        <span id="confirmPass_text" style="color:red;"></span>
     </td>
     </tr>
     <tr class="form">
@@ -310,30 +310,15 @@
     <td>
         <span style="display:inline-block; text-align:left;">
             <label>Medical History</label><br>
-            <input type="checkbox" 
-                   id="illness1" 
-                   name="illness1" 
-                   value="Heart Disease">
+            <input type="checkbox" id="illness1" name="illness1" value="Heart Disease">
             <label for="illness1">Heart Disease</label><br>
-            <input type="checkbox" 
-                   id="illness2" 
-                   name="illness2" 
-                   value="Diabetes">
+            <input type="checkbox" id="illness2" name="illness2" value="Diabetes">
             <label for="illness2">Diabetes</label><br>
-            <input type="checkbox" 
-                   id="illness3" 
-                   name="illness3" 
-                   value="Hypertension">
+            <input type="checkbox" id="illness3" name="illness3" value="Hypertension">
             <label for="illness3">Hypertension</label><br>
-            <input type="checkbox" 
-                   id="illness4" 
-                   name="illness4" 
-                   value="Cancer">
+            <input type="checkbox" id="illness4" name="illness4" value="Cancer">
             <label for="illness4">Cancer</label><br>
-            <input type="checkbox" 
-                   id="illnessOther" 
-                   name="illnessOther" 
-                   value="Other">
+            <input type="checkbox" id="illnessOther" name="illnessOther" value="Other">
             <label for="illnessOther">Other (Specify below)</label><br>
         </span>
         <span id="Medical_Check"></span>
@@ -343,7 +328,7 @@
     <td align="right"></td>
     <td>
         <span style="display:inline-block; text-align:left;">
-            <label for="description">Please describe your symptoms/conditon</label><br>
+            <label for="description">Please describe your symptoms/condition</label><br>
             <textarea 
                 id="description" 
                 name="description" 
@@ -359,42 +344,19 @@
     <td>
         <span style="display:inline-block; text-align:left; margin-right:75px;">
             <label>Gender</label><br>
-            <input type="radio" 
-                   id="male" 
-                   name="gender" 
-                   value="male"
-                   required
-            >
+            <input type="radio" id="male" name="gender" value="male" required>
                 <label for="male">Male</label><br>
-            <input type="radio" 
-                   id="female" 
-                   name="gender" 
-                   value="female"
-            >
+            <input type="radio" id="female" name="gender" value="female">
                 <label for="female">Female</label><br>
-            <input type="radio" 
-                   id="other" 
-                   name="gender" 
-                   value="other"
-            >
-                <label for="other">Other</label>
+            <input type="radio" id="othergender" name="gender" value="other">
+                <label for="othergender">Other</label>
         </span>
- 
         <span style="display:inline-block; text-align:left; vertical-align: top">
             <label>Are you on any medications?</label><br>
-            <input type="radio" 
-                   id="yes" 
-                   name="medication" 
-                   value="yes"
-                   required
-            >
-                <label for="yes">Yes</label><br>
-            <input type="radio" 
-                   id="no" 
-                   name="medication" 
-                   value="no"
-            >
-                <label for="no">No</label><br>
+            <input type="radio" id="medyes" name="medication" value="yes" required>
+                <label for="medyes">Yes</label><br>
+            <input type="radio" id="medno" name="medication" value="no">
+                <label for="medno">No</label><br>
         </span>
     </td>
     </tr>
@@ -403,19 +365,10 @@
     <td>
         <span style="display:inline-block; text-align:left;">
             <label>Have you been vaccinated for COVID?</label><br>
-            <input type="radio" 
-                   id="yes" 
-                   name="vaccination" 
-                   value="yes"
-                   required
-            >
-                <label for="yes">Yes</label><br>
-            <input type="radio" 
-                   id="no" 
-                   name="vaccination" 
-                   value="no"
-            >
-                <label for="no">No</label><br>
+            <input type="radio" id="vacyes" name="vaccination" value="yes" required>
+                <label for="vacyes">Yes</label><br>
+            <input type="radio" id="vacno" name="vaccination" value="no">
+                <label for="vacno">No</label><br>
         </span>
     </td>
     </tr>
@@ -431,16 +384,14 @@
                    max="10"
                    oninput="document.getElementById('urgencyValue').innerHTML = this.value">
         </span>
-        <span id="urgencyValue" style="margin-left: -210px;"></span>
+        <span id="urgencyValue" style="margin-left:10px;"></span>
     </td>
     </tr>
-         <!-- 
-         End of Form Inputs
-         -->
+
     <tr>        
         <td colspan="3">
             <center>
-            <input type="button" id="getdata" value="Review" onclick='getdata1()'>
+            <input type="button" id="getdata" value="Review" onclick="getdata1()">
             <input type="button" id="check" value="Check Input" onclick="checkform()">
             <input type="submit" value="Send" id="submit">
             <input type="reset" value="Clear">
@@ -450,29 +401,25 @@
     </table>
     </form> 
     </div>
-        <div id="footer">
-            <hr>
-            <center>
-            Preston Medical
-            <a href="https://theuselessweb.com/" class="contact-btn">CONTACT US</a>
-            <br>
-            PO BOX 65721
-            <br>
-            Missouri City TX 77459
-            </center>
-        </div>
-        <!-- 
-         Output Table Appears after clicking review
-         -->       
-</table>
-</form> 
-        </div>
-<!-- Show entered form data -->
+
+    <div id="footer">
+        <hr>
+        <center>
+        Preston Medical
+        <a href="https://theuselessweb.com/" class="contact-btn">CONTACT US</a>
+        <br>
+        PO BOX 65721
+        <br>
+        Missouri City TX 77459
+        </center>
+    </div>
+
+<!-- Output table appears here after clicking Review -->
 <div id="outputformdata"></div>
 
 <!-- Load external JavaScript -->
 <script src="homework2.js"></script>
- <script>
+<script>
     document.getElementById("today").innerHTML = new Date().toLocaleDateString();
 </script>
 </body>
