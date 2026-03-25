@@ -52,7 +52,9 @@
                    name="firstname" 
                    required 
                    oninput="this.setCustomValidity('')" 
+                   title="Enter your first name. Letters, apostrophes, and dashes only. 1-30 characters required."
                    placeholder="Jane (required)">
+
         </span>
         <span style="display:inline-block; text-align:left;">
             <label for="middleinit">MI</label><br>
@@ -61,6 +63,7 @@
                    maxlength="1" 
                    id="middleinit" 
                    name="middleinit" 
+                   title="Enter your middle initial. One letter only, no numbers or symbols. Optional."
                    placeholder="Q">
         </span>
         <span style="display:inline-block; text-align:left;">
@@ -73,6 +76,7 @@
                    required 
                    oninvalid="this.setCustomValidity('Last Name is Required')" 
                    oninput="this.setCustomValidity('')" 
+                   title="Enter your last name. Letters, apostrophes, dashes, and numbers 2-5 only. 1-30 characters required."
                    placeholder="Public (required)">
         </span>
         <span id="name_message" style="color:red;"></span>
@@ -89,7 +93,8 @@
                    name="DateOfBirth" 
                    required
                    oninvalid="this.setCustomValidity('Date of Birth is Required')"
-                   oninput="this.setCustomValidity('')">
+                   oninput="this.setCustomValidity('')"
+                   title="Enter your date of birth. Cannot be in the future or more than 120 years ago. Required.">
         </span>
         <span id="dob_message" style="color:red;"></span>
         <span id="dob_date"></span>
@@ -103,6 +108,7 @@
                    required
                    oninvalid="this.setCustomValidity('Social Security # is Required')"
                    oninput="this.setCustomValidity('')"
+                   title="Enter your Social Security Number. Required."
                    placeholder="SSN (required)">
         </span>
         <span id="ssn_text" style="color:red;"></span>
@@ -122,6 +128,7 @@
                    required
                    oninvalid="this.setCustomValidity('At least 1 address line Required')"
                    oninput="this.setCustomValidity('')"
+                   title="Enter your street address. 2-30 characters required."
                    placeholder="5555 Super St (required)">
         </span>
         <span id="addr1_text" style="color:red;"></span>
@@ -133,6 +140,7 @@
                    maxlength="30" 
                    id="addr2" 
                    name="addr2"
+                   title="Enter your apartment number or additional address info. 2-30 characters if entered. Optional."
                    placeholder="Apt #, other (optional)">
         </span>
         <span id="addr2_text" style="color:red;"></span>
@@ -151,6 +159,7 @@
                    required
                    oninvalid="this.setCustomValidity('You forgot City')"
                    oninput="this.setCustomValidity('')"
+                   title="Enter your city. 2-30 characters required."
                    placeholder="Anytown (required)">
         </span>
         <span style="display:inline-block; text-align:left;">
@@ -221,6 +230,7 @@
                    required
                    oninvalid="this.setCustomValidity('5 Digit Zip/Postal Code required')"
                    oninput="this.setCustomValidity('')"
+                   title="Enter your 5-digit zip code. Zip+4 format also accepted (00000-0000). Required."
                    placeholder="00000">
         </span>
         <span id="City_text" style="color:red;"></span><span id="State_text" style="color:red;"></span><span id="zip_text" style="color:red;"></span>
@@ -236,6 +246,7 @@
                    maxlength="13" 
                    id="phone" 
                    name="phone"
+                   title="Enter your phone number in format 000-000-0000. Optional."
                    placeholder="(281)415-4322">
         </span>
         <span id="phone_text" style="color:red;"></span>
@@ -250,6 +261,7 @@
                    size="25" 
                    id="email1" 
                    name="email1"
+                   title="Enter your email address in format name@domain.tld. Optional."
                    placeholder="HaroldM21@cougarnet.uh.edu">
         </span>
         <span id="Email_Text" style="color:red;"></span>
@@ -267,6 +279,7 @@
                    name="user"
                    placeholder="Username"
                    required
+                   title="Enter a username. 5-30 characters, letters and numbers only, cannot start with a number, no spaces. Required."
                    oninvalid="this.setCustomValidity('Username is Required')"
                    oninput="this.setCustomValidity('')"
             >
@@ -286,6 +299,7 @@
                    name="Password" 
                    required
                    placeholder="Password (required)"
+                   title="Enter a password. 8-30 characters, must include 1 uppercase, 1 lowercase, 1 number, and 1 special character. Cannot contain your name or username."
                    oninvalid="this.setCustomValidity('Password is Required')"
                    oninput="this.setCustomValidity('')"
             >
@@ -299,6 +313,7 @@
                    id="confirmPass" 
                    name="confirmPass" 
                    required
+                   title="Re-enter your password to confirm it matches."
                    placeholder="Retype Password"
             >
         </span>
@@ -334,6 +349,7 @@
                 name="description" 
                 rows="3" 
                 cols="50"
+                title="Describe your symptoms or condition. Optional."
                 placeholder="Describe your symptoms here..."></textarea>
         </span>
     </td>
