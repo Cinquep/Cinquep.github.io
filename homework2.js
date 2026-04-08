@@ -418,6 +418,3 @@ function checkform() {
   }
 }
 
-function checkCookie() {
-  // placeholder
-}
