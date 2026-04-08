@@ -1,9 +1,9 @@
 /* 
  Name: Cinque Preston
- File: homework3.js
+ File: homework2.js
  Date Created: 2026-03-15
- Date Updated: 2026-04-08
- Purpose: On-the-fly validation for medical registration form
+ Date Updated: 2026-03-24
+ Purpose: Redisplay/validate data from a form
 */
 
 /*
@@ -21,24 +21,31 @@ function getdata1() {
     switch (datatype) {
       case "checkbox":
         if (formcontents.elements[i].checked) {
-          formoutput = formoutput + "<tr><td class='fieldname'>" + formcontents.elements[i].name + "</td>";
-          formoutput = formoutput + "<td class='fieldtype'>" + datatype + "</td>";
+          formoutput = formoutput + "<tr><td align='right'>" + formcontents.elements[i].name + "</td>";
+          formoutput = formoutput + "<td align='right'>" + datatype + "</td>";
           formoutput = formoutput + "<td class='outputdata'>Checked</td></tr>";
         }
         break;
       case "radio":
         if (formcontents.elements[i].checked) {
-          formoutput = formoutput + "<tr><td class='fieldname'>" + formcontents.elements[i].name + "</td>";
-          formoutput = formoutput + "<td class='fieldtype'>" + datatype + "</td>";
+          formoutput = formoutput + "<tr><td align='right'>" + formcontents.elements[i].name + "</td>";
+          formoutput = formoutput + "<td align='right'>" + datatype + "</td>";
           formoutput = formoutput + "<td class='outputdata'>" + formcontents.elements[i].value + "</td></tr>";
         }
         break;
       case "button": case "submit": case "reset":
         break;
+      case "password":
+        if (formcontents.elements[i].value !== "") {
+          formoutput = formoutput + "<tr><td align='right'>" + formcontents.elements[i].name + "</td>";
+          formoutput = formoutput + "<td align='right'>" + datatype + "</td>";
+          formoutput = formoutput + "<td class='outputdata'>••••••••</td></tr>";
+        }
+        break;
       default:
         if (formcontents.elements[i].value !== "") {
-          formoutput = formoutput + "<tr><td class='fieldname'>" + formcontents.elements[i].name + "</td>";
-          formoutput = formoutput + "<td class='fieldtype'>" + datatype + "</td>";
+          formoutput = formoutput + "<tr><td align='right'>" + formcontents.elements[i].name + "</td>";
+          formoutput = formoutput + "<td align='right'>" + datatype + "</td>";
           formoutput = formoutput + "<td class='outputdata'>" + formcontents.elements[i].value + "</td></tr>";
         }
     }
@@ -50,38 +57,6 @@ function getdata1() {
 
 function removedata1() {
   document.getElementById("outputformdata").innerHTML = "";
-  document.getElementById("submit").disabled = true;
-}
-
-/*
-   SSN AUTO-FORMAT
-   Inserts dashes automatically as user types: 000-00-0000
-*/
-function formatSSN() {
-  var val = document.getElementById("SSN").value;
-  val = val.replace(/[^0-9]/g, "");
-  if (val.length > 3 && val.length <= 5) {
-    val = val.substring(0, 3) + "-" + val.substring(3);
-  } else {
-    if (val.length > 5) {
-      val = val.substring(0, 3) + "-" + val.substring(3, 5) + "-" + val.substring(5, 9);
-    }
-  }
-  document.getElementById("SSN").value = val;
-}
-
-/*
-   SSN VALIDATION
-   Must be 9 digits (formatted as 000-00-0000)
-*/
-function checkSSN() {
-  x = document.getElementById("SSN").value;
-  if (document.getElementById("SSN").value.match(/^\d{3}-\d{2}-\d{4}$/)) {
-    document.getElementById("ssn_text").innerHTML = "";
-  } else {
-    document.getElementById("ssn_text").innerHTML = "SSN must be in format 000-00-0000.";
-    error_flag = "1";
-  }
 }
 
 /*
@@ -321,93 +296,82 @@ function checkuser() {
    cannot contain username or name parts
 */
 function passwordentry() {
-  var passwordoutput;
-  var passwordinput = document.getElementById("pass").value;
+  var pass = document.getElementById("pass").value;
   var username = document.getElementById("user").value.toLowerCase();
   var firstname = document.getElementById("firstname").value.toLowerCase();
   var lastname = document.getElementById("lastname").value.toLowerCase();
-  console.log(passwordinput);
 
-  // Validate lowercase letters
-  if (passwordinput.search(/[a-z]/) < 0) {
-    passwordoutput = "Enter at least 1 lowercase letter.";
+  // Length
+  if (pass.length < 8 || pass.length > 30) {
+    document.getElementById("pass_text").innerHTML = "Password must be 8-30 characters.";
     error_flag = "1";
   } else {
-    passwordoutput = "Got at least 1 lowercase letter.";
+    document.getElementById("pass_text").innerHTML = "";
   }
-  document.getElementById("pass_text").innerHTML = passwordoutput;
 
-  // Validate uppercase letters
-  if (passwordinput.search(/[A-Z]/) < 0) {
-    passwordoutput = "Enter at least 1 uppercase letter.";
+  // Lowercase
+  if (pass.search(/[a-z]/) < 0) {
+    document.getElementById("pass_text2").innerHTML = "Need at least 1 lowercase letter.";
     error_flag = "1";
   } else {
-    passwordoutput = "Got at least 1 uppercase letter.";
+    document.getElementById("pass_text2").innerHTML = "";
   }
-  document.getElementById("pass_text2").innerHTML = passwordoutput;
 
-  // Validate numbers
-  if (passwordinput.search(/[0-9]/) < 0) {
-    passwordoutput = "Enter at least 1 number.";
+  // Uppercase
+  if (pass.search(/[A-Z]/) < 0) {
+    document.getElementById("pass_text3").innerHTML = "Need at least 1 uppercase letter.";
     error_flag = "1";
   } else {
-    passwordoutput = "Got at least 1 number.";
+    document.getElementById("pass_text3").innerHTML = "";
   }
-  document.getElementById("pass_text3").innerHTML = passwordoutput;
 
-  // Validate special characters
-  if (passwordinput.search(/[!@#%^&*()\-_+=\\\/><.,`~]/) < 0) {
-    passwordoutput = "Enter at least 1 special character: !@#%^&*()-_+=\\/><.,`~";
+  // Number
+  if (pass.search(/[0-9]/) < 0) {
+    document.getElementById("pass_text4").innerHTML = "Need at least 1 number.";
     error_flag = "1";
   } else {
-    passwordoutput = "Got at least 1 special character.";
+    document.getElementById("pass_text4").innerHTML = "";
   }
-  document.getElementById("pass_text4").innerHTML = passwordoutput;
 
-  // Validate length
-  if (passwordinput.length < 8 || passwordinput.length > 30) {
-    passwordoutput = "Password must be 8-30 characters.";
+  // Special character
+  if (pass.search(/[!@#%^&*()\-_+=\\\/><.,`~]/) < 0) {
+    document.getElementById("pass_text5").innerHTML = "Need at least 1 special character: !@#%^&*()-_+=\\/><.,`~";
     error_flag = "1";
   } else {
-    passwordoutput = "Password length is good.";
+    document.getElementById("pass_text5").innerHTML = "";
   }
-  document.getElementById("pass_text5").innerHTML = passwordoutput;
 
-  // Validate no double-quotes
-  if (passwordinput.indexOf('"') >= 0) {
-    passwordoutput = "Password cannot contain double-quote characters.";
+  // No double-quotes
+  if (pass.indexOf('"') >= 0) {
+    document.getElementById("pass_text6").innerHTML = "Password cannot contain double-quote (\") characters.";
     error_flag = "1";
   } else {
-    passwordoutput = "";
+    document.getElementById("pass_text6").innerHTML = "";
   }
-  document.getElementById("pass_text6").innerHTML = passwordoutput;
 
-  // Validate does not contain username
-  if (username.length >= 3 && passwordinput.toLowerCase().indexOf(username) >= 0) {
-    passwordoutput = "Password cannot contain your username.";
+  // Cannot contain username
+  if (username.length >= 3 && pass.toLowerCase().indexOf(username) >= 0) {
+    document.getElementById("pass_text7").innerHTML = "Password cannot contain your username.";
     error_flag = "1";
   } else {
-    passwordoutput = "";
+    document.getElementById("pass_text7").innerHTML = "";
   }
-  document.getElementById("pass_text7").innerHTML = passwordoutput;
 
-  // Validate does not contain first name
-  if (firstname.length >= 3 && passwordinput.toLowerCase().indexOf(firstname) >= 0) {
-    passwordoutput = "Password cannot contain your first name.";
+  // Cannot contain first name
+  if (firstname.length >= 3 && pass.toLowerCase().indexOf(firstname) >= 0) {
+    document.getElementById("pass_text8").innerHTML = "Password cannot contain your first name.";
     error_flag = "1";
   } else {
-    passwordoutput = "";
+    document.getElementById("pass_text8").innerHTML = "";
   }
-  document.getElementById("pass_text8").innerHTML = passwordoutput;
 
-  // Validate does not contain last name
-  if (lastname.length >= 3 && passwordinput.toLowerCase().indexOf(lastname) >= 0) {
-    passwordoutput = "Password cannot contain your last name.";
+  // Cannot contain last name
+  if (lastname.length >= 3 && pass.toLowerCase().indexOf(lastname) >= 0) {
+    document.getElementById("pass_text9").innerHTML = "Password cannot contain your last name.";
     error_flag = "1";
   } else {
-    passwordoutput = "";
+    document.getElementById("pass_text9").innerHTML = "";
   }
-  document.getElementById("pass_text9").innerHTML = passwordoutput;
 }
 
 /*
@@ -435,7 +399,6 @@ function checkform() {
   checkmiddle();
   checklastname();
   checkDOB();
-  checkSSN();
   checkemail();
   checkphone();
   checkaddr1();
