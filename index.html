@@ -9,7 +9,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Homework 1</title>
+        <title>Appointment Registration - Preston Medical Center</title>
         <link rel="stylesheet" href="homework1.css">
         <link rel="stylesheet" href="homework2.css">
     </head>
@@ -175,6 +175,7 @@
                 <option value="CT">Connecticut</option>
                 <option value="DE">Delaware</option>
                 <option value="DC">District Of Columbia</option>
+                <option value="PR">Puerto Rico</option>
                 <option value="FL">Florida</option>
                 <option value="GA">Georgia</option>
                 <option value="HI">Hawaii</option>
@@ -222,16 +223,15 @@
         <span style="display:inline-block; text-align:left;">
             <label for="zip">Zip</label><br>
             <input type="text" 
-                   pattern="[0-9]{5}" 
-                   size="5" 
-                   maxlength="5" 
+                   size="10" 
+                   maxlength="10" 
                    id="zip" 
                    name="zip" 
                    required
-                   oninvalid="this.setCustomValidity('5 Digit Zip/Postal Code required')"
+                   oninvalid="this.setCustomValidity('5-digit ZIP code required (e.g. 77002 or 77002-1234)')"
                    oninput="this.setCustomValidity('')"
-                   title="Enter your 5-digit zip code. Zip+4 format also accepted (00000-0000). Required."
-                   placeholder="00000">
+                   title="Enter your ZIP code. 5 digits required. ZIP+4 format (00000-0000) also accepted and will be trimmed to 5 digits. Required."
+                   placeholder="00000 or 00000-0000">
         </span>
         <span id="City_text" style="color:red;"></span><span id="State_text" style="color:red;"></span><span id="zip_text" style="color:red;"></span>
     </td>
@@ -403,7 +403,7 @@
             <input type="range" 
                    id="feeling" 
                    name="feeling"
-                   min="0"
+                   min="1"
                    max="10"
                    oninput="document.getElementById('urgencyValue').innerHTML = this.value">
         </span>
