@@ -3,10 +3,9 @@
  File: homework2.js
  Date Created: 2026-03-15
  Date Updated: 2026-04-20
- Purpose: Validate and display a user-friendly summary of form data
 */
 
-// Maps each field's element id → a friendly label for the review table
+// Maps each field's element id a label for the table
 var FIELD_LABELS = {
   firstname:    "First Name",
   middleinit:   "Middle Initial",
@@ -36,7 +35,7 @@ var FIELD_LABELS = {
 };
 
 /*
-   DISPLAY REVIEW TABLE — user-friendly, no "Type" column
+   DISPLAY REVIEW TABLE user-friendly, no "Type" column
 */
 function getdata1() {
   var form = document.getElementById("register");
@@ -55,12 +54,12 @@ function getdata1() {
       if (!el.checked) continue;
       val = "Yes";
     } else if (type === "radio") {
-      if (seen[el.name]) continue; // already handled this group
+      if (seen[el.name]) continue;
       seen[el.name] = true;
       // find whichever radio in this group is checked
       var checked = form.querySelector('input[name="' + el.name + '"]:checked');
       if (!checked) continue;
-      // capitalize the value nicely
+      // capitalize the value
       val = checked.value.charAt(0).toUpperCase() + checked.value.slice(1);
       label = FIELD_LABELS[el.name] || el.name;
     } else if (type === "password") {
@@ -93,7 +92,7 @@ function removedata1() {
   document.getElementById("outputformdata").innerHTML = "";
 }
 
-// ── VALIDATION FUNCTIONS ──────────────────────────────────────────────────────
+// VALIDATION FUNCTIONS
 
 var error_flag = "0";
 
@@ -102,7 +101,7 @@ function showMsg(id, msg) {
   if (el) el.innerHTML = msg;
 }
 
-/*  FIRST NAME — 1-30 chars, letters/apostrophes/dashes only */
+/*  FIRST NAME 1-30 chars, letters/apostrophes/dashes only */
 function checkfirstname() {
   var val = document.getElementById("firstname").value;
   if (val.length < 1 || val.length > 30) {
@@ -116,7 +115,7 @@ function checkfirstname() {
   }
 }
 
-/*  MIDDLE INITIAL — optional, single letter */
+/*  MIDDLE INITIAL optional, single letter */
 function checkmiddle() {
   var val = document.getElementById("middleinit").value;
   if (val.length === 0) {
@@ -129,7 +128,7 @@ function checkmiddle() {
   }
 }
 
-/*  LAST NAME — 1-30 chars, letters/apostrophes/dashes/numbers 2-5 */
+/*  LAST NAME 1-30 chars, letters/apostrophes/dashes/numbers 2-5 */
 function checklastname() {
   var val = document.getElementById("lastname").value;
   if (val.length < 1 || val.length > 30) {
@@ -143,7 +142,7 @@ function checklastname() {
   }
 }
 
-/*  DATE OF BIRTH — required, not future, not > 120 years ago */
+/*  DATE OF BIRTH required, not future, not > 120 years ago */
 function checkDOB() {
   var val = document.getElementById("DOB").value;
   if (!val) {
@@ -194,7 +193,7 @@ function checkphone() {
   }
 }
 
-/*  ADDRESS LINE 1 — required, 2-30 characters */
+/*  ADDRESS LINE 1 required, 2-30 characters */
 function checkaddr1() {
   var val = document.getElementById("addr1").value;
   if (val.length < 2 || val.length > 30) {
@@ -205,7 +204,7 @@ function checkaddr1() {
   }
 }
 
-/*  ADDRESS LINE 2 — optional, same length rules if entered */
+/*  ADDRESS LINE 2 optional, same length rules if entered */
 function checkaddr2() {
   var val = document.getElementById("addr2").value;
   if (val.length === 0) {
@@ -218,7 +217,7 @@ function checkaddr2() {
   }
 }
 
-/*  CITY — required, 2-30 characters */
+/*  CITY required, 2-30 characters */
 function checkcity() {
   var val = document.getElementById("city").value;
   if (val.length < 2 || val.length > 30) {
@@ -229,7 +228,7 @@ function checkcity() {
   }
 }
 
-/*  STATE — must select a value */
+/*  STATE must select a value */
 function checkstate() {
   var val = document.getElementById("state").value;
   if (val === "") {
@@ -240,7 +239,7 @@ function checkstate() {
   }
 }
 
-/*  ZIP — required, 5 digits or zip+4; truncates to 5 on success */
+/*  ZIP required, 5 digits or zip+4; truncates to 5 on success */
 function checkzip() {
   var val = document.getElementById("zip").value;
   if (val.match(/^\d{5}(-\d{4})?$/)) {
@@ -252,7 +251,7 @@ function checkzip() {
   }
 }
 
-/*  USERNAME — 5-30 chars, letters/numbers/underscores/dashes, no leading digit, converted to lowercase */
+/*  USERNAME 5-30 chars, letters/numbers/underscores/dashes, no leading digit, converted to lowercase */
 function checkuser() {
   var val = document.getElementById("user").value;
   if (val.length < 5 || val.length > 30) {
@@ -273,7 +272,7 @@ function checkuser() {
   }
 }
 
-/*  PASSWORD — 8-30 chars, upper + lower + digit + special, no double-quotes,
+/*  PASSWORD 8-30 chars, must have upper, lower, digit, special, no double-quotes,
     cannot contain username or name fragments */
 function passwordentry() {
   var pass     = document.getElementById("pass").value;
@@ -307,7 +306,7 @@ function passwordentry() {
   } else { showMsg("pass_text9", ""); }
 }
 
-/*  CONFIRM PASSWORD — must match */
+/*  CONFIRM PASSWORD must match */
 function checkpassword2() {
   var p1 = document.getElementById("pass").value;
   var p2 = document.getElementById("confirmPass").value;
@@ -319,7 +318,7 @@ function checkpassword2() {
   }
 }
 
-/*  CHECK ALL — run every validator, enable Submit only if clean */
+/*  CHECK ALL run every validator, enable Submit only if clean */
 function checkform() {
   error_flag = "0";
 
