@@ -7,7 +7,7 @@
  Description: External stylesheet for the Preston Medical Center
 */
 
-/* Tag selectors */
+/*  Tag Selectors  */
 body 
 {
     background-color: rgb(202, 230, 255);
@@ -42,7 +42,7 @@ a:hover
     color: rgb(0, 60, 100);
 }
 
-/* ID Selectors*/
+/* === ID SELECTORS === */
 #header 
 {
     background-color: rgb(162, 255, 144);
@@ -63,12 +63,8 @@ a:hover
     color: rgb(30, 30, 30);
 }
 
-#body
-{
-    margin: 10px 20px;
-}
 
-/*Class selectors*/
+/* === CLASS SELECTORS === */
 table.form, tr.form, td.form 
 {
     margin: 0 auto;
@@ -88,6 +84,7 @@ table.form, tr.form, td.form
     text-align: center;
     color: rgb(0, 70, 110);
     font-family: Georgia, serif;
+    width: 100%;
 }
 
 .banner-date
@@ -98,6 +95,7 @@ table.form, tr.form, td.form
     color: rgb(40, 40, 40);
 }
 
+/* === THREE-COLUMN LAYOUT === */
 #main-layout
 {
     display: flex;
@@ -113,7 +111,7 @@ table.form, tr.form, td.form
     flex: 0 0 auto;
 }
 
-/* === left and right sides === */
+/* === LEFT & RIGHT PANELS === */
 #left-panel, #right-panel
 {
     flex: 0 0 210px;
@@ -159,7 +157,7 @@ table.form, tr.form, td.form
     margin-bottom: 3px;
 }
 
-/* right */
+/* === RIGHT PANEL GRAPHIC === */
 .graphic-panel
 {
     background: linear-gradient(160deg, #d0eef8 0%, #a8d8ea 100%);
@@ -190,4 +188,12 @@ table.form, tr.form, td.form
 .trust-card
 {
     border-left-color: rgb(162, 255, 144);
+}
+
+.doctor-img
+{
+    width: 100%;
+    max-width: 200px;
+    display: block;
+    margin: 0 auto;
 }
