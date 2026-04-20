@@ -1,33 +1,101 @@
-   /* 
- Name: Cinque Preston
- File: homework1.css
- Date Created: 2026-02-15
- Date Updated: 2026-02-23
- Purpose: Style sheet for MIS 3371 HW1
- */
- body 
+/* 
+ Program name: homework1.css
+ Author: Cinque Preston
+ Date created: 2026-02-15
+ Date last edited: 2026-04-20
+ Version: 1.3
+ Description: External stylesheet for the Preston Medical Center
+              patient registration form (MIS 3371 HW1/HW2).
+              Controls layout, typography, colors, and component styles.
+*/
+
+/* === TAG SELECTORS === */
+body 
 {
     background-color: rgb(202, 230, 255);
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: rgb(20, 20, 20);
+    margin: 0;
+    padding: 0;
 }
-table.form, tr.form, td.form 
+
+h1, h2, h3
 {
-  margin: 0 auto;
-  width: 500px;
-  opacity: 1;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  background-color:rgb(255, 255, 255);
-  padding: 0px;
-  border-spacing: 12px;
-  color:rgb(0, 0, 0);
+    font-family: Georgia, 'Times New Roman', serif;
+    color: rgb(0, 80, 120);
 }
+
+/* Hyperlinks */
+a
+{
+    color: rgb(0, 100, 160);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:visited
+{
+    color: rgb(90, 0, 130);
+}
+
+a:hover
+{
+    text-decoration: underline;
+    color: rgb(0, 60, 100);
+}
+
+/* === ID SELECTORS === */
 #header 
 {
     background-color: rgb(162, 255, 144);
-    border: 1px solid #ffffff;
+    border: 1px solid #ccc;
     margin: 20px;
     padding: 10px;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
+#footer
+{
+    background-color: rgb(162, 255, 144);
+    border: 1px solid #ccc;
+    margin: 20px;
+    padding: 10px;
+    text-align: center;
+    font-size: 14px;
+    color: rgb(30, 30, 30);
+}
 
+#body
+{
+    margin: 10px 20px;
+}
+
+/* === CLASS SELECTORS === */
+table.form, tr.form, td.form 
+{
+    margin: 0 auto;
+    width: 600px;
+    opacity: 1;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: rgb(255, 255, 255);
+    padding: 0px;
+    border-spacing: 12px;
+    color: rgb(0, 0, 0);
+}
+
+.banner-title
+{
+    font-weight: bold;
+    font-size: 39px;
+    text-align: center;
+    color: rgb(0, 70, 110);
+    font-family: Georgia, serif;
+}
+
+.banner-date
+{
+    text-align: right;
+    vertical-align: bottom;
+    font-size: 14px;
+    color: rgb(40, 40, 40);
+}
