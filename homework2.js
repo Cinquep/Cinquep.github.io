@@ -346,6 +346,5 @@ function checkform() {
   }
 }
 
-function checkCookie() {
-  // placeholder for future cookie logic
+
 }
