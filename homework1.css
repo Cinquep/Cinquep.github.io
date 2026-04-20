@@ -42,7 +42,7 @@ a:hover
     color: rgb(0, 60, 100);
 }
 
-/* === ID SELECTORS === */
+/* ID Selectors */
 #header 
 {
     background-color: rgb(162, 255, 144);
@@ -64,7 +64,7 @@ a:hover
 }
 
 
-/* === CLASS SELECTORS === */
+/* Class selectors*/
 table.form, tr.form, td.form 
 {
     margin: 0 auto;
@@ -95,7 +95,6 @@ table.form, tr.form, td.form
     color: rgb(40, 40, 40);
 }
 
-/* === THREE-COLUMN LAYOUT === */
 #main-layout
 {
     display: flex;
@@ -111,7 +110,7 @@ table.form, tr.form, td.form
     flex: 0 0 auto;
 }
 
-/* === LEFT & RIGHT PANELS === */
+/* Panels */
 #left-panel, #right-panel
 {
     flex: 0 0 210px;
@@ -157,7 +156,7 @@ table.form, tr.form, td.form
     margin-bottom: 3px;
 }
 
-/* === RIGHT PANEL GRAPHIC === */
+/* right */
 .graphic-panel
 {
     background: linear-gradient(160deg, #d0eef8 0%, #a8d8ea 100%);
