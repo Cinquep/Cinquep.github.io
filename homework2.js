@@ -343,7 +343,7 @@ function checkform() {
     document.getElementById("submit").disabled = false;
     alert("Everything looks good! You may now click Send to submit.");
   }
-}
+
 
 
 }
