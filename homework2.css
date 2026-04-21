@@ -3,7 +3,7 @@
  File: homework2.css
  Date Created: 2026-03-24
  Date Updated: 2026-04-20
- Purpose: Styles for the form review summary table
+ Purpose: Styles for the form table
 */
 
 #outputformdata {
@@ -11,7 +11,7 @@
     margin-bottom: 40px;
 }
 
-/* Wrapper table */
+/* table */
 table.output {
     border-collapse: collapse;
     width: 50%;
@@ -42,7 +42,7 @@ table.output td {
     vertical-align: middle;
 }
 
-/* Alternating row shading */
+/* row shading */
 table.output tr:nth-child(even) td {
     background-color: #eaf4fb;
 }
@@ -50,12 +50,12 @@ table.output tr:nth-child(odd) td {
     background-color: #ffffff;
 }
 
-/* Hover highlight */
+/* highlight cells */
 table.output tr:hover td {
     background-color: #cde8f5;
 }
 
-/* Field label column */
+/* Field label */
 td.review-label {
     font-weight: bold;
     color: #1a4a5a;
@@ -65,7 +65,7 @@ td.review-label {
     padding-right: 20px;
 }
 
-/* User entry value column */
+/* User entry values */
 td.review-value {
     color: #333;
     text-align: left;
