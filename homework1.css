@@ -57,7 +57,7 @@ a:hover
 
 .banner-date > span
 {
-    background: rgba(0,0,0,0.5);
+    background: rgba(0,0,0,0.7);
     border-radius: 6px;
     padding: 2px 8px;
     display: inline-block;
@@ -102,7 +102,7 @@ table.form, tr.form, td.form
 {
     width: auto;
     display: inline-block;
-    background: rgba(0,0,0,0.5);
+    background: rgba(0,0,0,0.7);
     border-radius: 6px;
     padding: 2px 12px;
 }
