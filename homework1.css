@@ -80,7 +80,7 @@ table.form, tr.form, td.form
     font-weight: bold;
     font-size: 39px;
     text-align: center;
-    color: rgb(162, 255, 144);
+    color: rgb(255, 255, 255);
     font-family: Georgia, serif;
     width: 100%;
 }
@@ -90,7 +90,7 @@ table.form, tr.form, td.form
     text-align: right;
     vertical-align: bottom;
     font-size: 14px;
-    color: rgb(162, 255, 144);
+    color: rgb(255, 255, 255);
     width: 200px;
 }
 
