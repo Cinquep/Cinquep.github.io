@@ -317,7 +317,38 @@ function checkpassword2() {
     error_flag = "1";
   }
 }
+/* GENDER required */
+function checkgender() {
+  var checked = document.querySelector('input[name="gender"]:checked');
+  if (!checked) {
+    showMsg("Medical_Check", "Please select a gender.");
+    error_flag = "1";
+  } else {
+    showMsg("Medical_Check", "");
+  }
+}
 
+/* MEDICATION required */
+function checkmedication() {
+  var checked = document.querySelector('input[name="medication"]:checked');
+  if (!checked) {
+    showMsg("Medical_Check", "Please indicate whether you are on medications.");
+    error_flag = "1";
+  } else {
+    showMsg("Medical_Check", "");
+  }
+}
+
+/* VACCINATION required */
+function checkvaccination() {
+  var checked = document.querySelector('input[name="vaccination"]:checked');
+  if (!checked) {
+    showMsg("Medical_Check", "Please indicate your COVID vaccination status.");
+    error_flag = "1";
+  } else {
+    showMsg("Medical_Check", "");
+  }
+}
 /*  CHECK ALL run every validator, enable Submit only if clean */
 function checkform() {
   error_flag = "0";
@@ -336,6 +367,9 @@ function checkform() {
   checkuser();
   passwordentry();
   checkpassword2();
+  checkgender();
+  checkmedication();
+  checkvaccination();
 
   if (error_flag === "1") {
     alert("Some fields need attention. Please fix the highlighted errors before submitting.");
