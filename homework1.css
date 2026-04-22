@@ -55,14 +55,13 @@ a:hover
     padding: 8px;
 }
 
-#header-table td span,
-#header-table td.banner-title,
-#header-table td.banner-date
+.banner-date > span
 {
     background: rgba(0,0,0,0.5);
     border-radius: 6px;
     padding: 2px 8px;
     display: inline-block;
+    white-space: nowrap;
 }
 #header-logo
 {
@@ -99,6 +98,14 @@ table.form, tr.form, td.form
     font-family: Georgia, serif;
     width: 100%;
 }
+.banner-title span
+{
+    width: auto;
+    display: inline-block;
+    background: rgba(0,0,0,0.5);
+    border-radius: 6px;
+    padding: 2px 12px;
+}
 .banner-date
 {
     text-align: right;
@@ -106,7 +113,6 @@ table.form, tr.form, td.form
     font-size: 14px;
     color: rgb(255, 255, 255);
     width: 200px;
-    white-space: nowrap;
 }
 /* Error messages */
 .error-msg
