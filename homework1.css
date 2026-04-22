@@ -50,10 +50,18 @@ a:hover
 }
 #header-table td
 {
-    background: rgba(0,0,0,0.5);
-    border-radius: 8px;
-    padding: 2px 6px;
     vertical-align: middle;
+    padding: 8px;
+}
+
+#header-table td span,
+#header-table td.banner-title,
+#header-table td.banner-date
+{
+    background: rgba(0,0,0,0.5);
+    border-radius: 6px;
+    padding: 2px 8px;
+    display: inline-block;
 }
 #header-logo
 {
