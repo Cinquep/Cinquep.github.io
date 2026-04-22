@@ -91,6 +91,7 @@ table.form, tr.form, td.form
     vertical-align: bottom;
     font-size: 14px;
     color: rgb(162, 255, 144);
+    width: 200px;
 }
 
 #main-layout
