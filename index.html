@@ -1,4 +1,3 @@
-
 <!--
  Program name: index.html
  Author: Cinque Preston
@@ -17,9 +16,9 @@
  
     <body>
         <div id="header"> 
-            <table style="width: 200px; vertical-align: middle; background: rgba(0,0,0,0.5); border-radius: 8px; padding: 5px;">
+            <table id="header-table">
                 <tr>
-                    <td style="vertical-align: middle; background: rgba(0,0,0,0.5); border-radius: 8px; padding: 10px;">
+                    <td id="header-logo">
                         <img 
                             id="logo" 
                             src="SOMETHING.png" 
@@ -28,8 +27,8 @@
                             height="200"
                         >
                     </td>
-                    <td class="banner-title" style="vertical-align: middle; background: rgba(0,0,0,0.5); border-radius: 8px; padding: 10px;">Preston Medical Center</td>
-                    <td class="banner-date" style="white-space: nowrap; width: 200px; background: rgba(0,0,0,0.5); border-radius: 8px; padding: 8px;">Today's date: <span id="today"></span></td>
+                    <td class="banner-title">Preston Medical Center</td>
+                    <td class="banner-date">Today's date: <span id="today"></span></td>
                 </tr>
             </table>
         </div>
@@ -108,9 +107,9 @@
                    title="Enter your last name. Letters, apostrophes, dashes, and numbers 2-5 only. 1-30 characters required."
                    placeholder="Public (required)">
         </span>
-        <span id="name_message" style="display:block; color:red;"></span>
-        <span id="mi_message" style="display:block; color:red;"></span>
-        <span id="lastname_message" style="display:block; color:red;"></span>
+        <span id="name_message" class="error-msg"></span>
+        <span id="mi_message" class="error-msg"></span>
+        <span id="lastname_message" class="error-msg"></span>
     </td>
     </tr>
     <tr class="form">
@@ -126,7 +125,7 @@
                    oninput="this.setCustomValidity('')"
                    title="Enter your date of birth. Cannot be in the future or more than 120 years ago. Required.">
         </span>
-        <span id="dob_message" style="display:block; color:red;"></span>
+        <span id="dob_message" class="error-msg"></span>
         <span id="dob_date"></span>
         <span style="display:inline-block; text-align:left;">
             <label for="SSN">SSN</label><br>
@@ -141,7 +140,7 @@
                    title="Enter your Social Security Number. Required."
                    placeholder="SSN (required)">
         </span>
-        <span id="ssn_text" style="display:block; color:red;"></span>
+        <span id="ssn_text" class="error-msg"></span>
     </td>
     </tr>
     <tr class="form">
@@ -161,7 +160,7 @@
                    title="Enter your street address. 2-30 characters required."
                    placeholder="5555 Super St (required)">
         </span>
-        <span id="addr1_text" style="display:block; color:red;"></span>
+        <span id="addr1_text" class="error-msg"></span>
 
         <span style="display:inline-block; text-align:left;">
             <label for="addr2">Address Line 2</label><br>
@@ -173,7 +172,7 @@
                    title="Enter your apartment number or additional address info. 2-30 characters if entered. Optional."
                    placeholder="Apt #, other (optional)">
         </span>
-        <span id="addr2_text" style="display:block; color:red;"></span>
+        <span id="addr2_text" class="error-msg"></span>
     </td>
     </tr>
     <tr class="form">
@@ -263,7 +262,9 @@
                    title="Enter your ZIP code. 5 digits required. ZIP+4 format (00000-0000) also accepted and will be trimmed to 5 digits. Required."
                    placeholder="00000 or 00000-0000">
         </span>
-        <span id="City_text" style="display:block; color:red;"></span><span id="State_text" style="display:block; color:red;"></span><span id="zip_text" style="display:block; color:red;"></span>
+        <span id="City_text" class="error-msg"></span>
+        <span id="State_text" class="error-msg"></span>
+        <span id="zip_text" class="error-msg"></span>
     </td>
     </tr>
     <tr class="form">
@@ -279,7 +280,7 @@
                    title="Enter your phone number in format 000-000-0000. Optional."
                    placeholder="(281)415-4322">
         </span>
-        <span id="phone_text" style="display:block; color:red;"></span>
+        <span id="phone_text" class="error-msg"></span>
     </td>
     </tr>
     <tr class="form">
@@ -294,7 +295,7 @@
                    title="Enter your email address in format name@domain.tld. Optional."
                    placeholder="HaroldM21@cougarnet.uh.edu">
         </span>
-        <span id="Email_Text" style="display:block; color:red;"></span>
+        <span id="Email_Text" class="error-msg"></span>
     </td>
     </tr>
     <tr class="form">
@@ -314,7 +315,7 @@
                    oninput="this.setCustomValidity('')"
             >
         </span>
-        <span id="user_text" style="display:block; color:red;"></span>
+        <span id="user_text" class="error-msg"></span>
     </td>
     </tr>
     <tr class="form">
@@ -334,15 +335,15 @@
                    oninput="this.setCustomValidity('')"
             >
         </span>
-        <span id="pass_text" style="display:block; color:red;"></span>
-        <span id="pass_text2" style="display:block; color:red;"></span>
-        <span id="pass_text3" style="display:block; color:red;"></span>
-        <span id="pass_text4" style="display:block; color:red;"></span>
-        <span id="pass_text5" style="display:block; color:red;"></span>
-        <span id="pass_text6" style="display:block; color:red;"></span>
-        <span id="pass_text7" style="display:block; color:red;"></span>
-        <span id="pass_text8" style="display:block; color:red;"></span>
-        <span id="pass_text9" style="display:block; color:red;"></span>
+        <span id="pass_text" class="error-msg"></span>
+        <span id="pass_text2" class="error-msg"></span>
+        <span id="pass_text3" class="error-msg"></span>
+        <span id="pass_text4" class="error-msg"></span>
+        <span id="pass_text5" class="error-msg"></span>
+        <span id="pass_text6" class="error-msg"></span>
+        <span id="pass_text7" class="error-msg"></span>
+        <span id="pass_text8" class="error-msg"></span>
+        <span id="pass_text9" class="error-msg"></span>
         <span style="display:inline-block; text-align:left;">
             <label for="confirmPass">Confirm your password</label><br>
             <input type="password" 
@@ -355,7 +356,7 @@
                    placeholder="Retype Password"
             >
         </span>
-        <span id="confirmPass_text" style="display:block; "color:red;"></span>
+        <span id="confirmPass_text" class="error-msg"></span>
     </td>
     </tr>
     <tr class="form">
